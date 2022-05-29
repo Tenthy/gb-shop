@@ -9,9 +9,10 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import ru.kmetha.gbshopmay.service.ManufacturerService;
-import ru.kmetha.gbshopmay.web.dto.ManufacturerDto;
-import ru.kmetha.gbshopmay.web.dto.mapper.ManufacturerMapper;
+import ru.kmetha.gbshop.service.ManufacturerService;
+import ru.kmetha.gbshop.web.dto.ManufacturerDto;
+import ru.kmetha.gbshop.web.dto.mapper.ManufacturerMapper;
+import ru.kmetha.gbshop.web.rest.ManufacturerRestController;
 
 import java.util.ArrayList;
 import java.util.List;

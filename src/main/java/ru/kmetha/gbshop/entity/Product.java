@@ -1,0 +1,69 @@
+package ru.kmetha.gbshop.entity;
+
+import lombok.*;
+import org.springframework.data.annotation.CreatedBy;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedBy;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+import ru.kmetha.gbshop.entity.common.InfoEntity;
+import ru.kmetha.gbshop.entity.enums.Status;
+
+import javax.persistence.*;
+import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Set;
+
+@Setter
+@Getter
+@NoArgsConstructor
+@Entity
+@Table (name = "product")
+@EntityListeners(AuditingEntityListener.class)
+public class Product extends InfoEntity {
+
+    @Column(name = "title")
+    private String title;
+    @Column(name = "cost")
+    private BigDecimal cost;
+    @Column(name = "manufacture_date")
+    private LocalDate manufactureDate;
+    @ManyToOne
+    @JoinColumn(name = "manufacturer_id")
+    private Manufacturer manufacturer;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "status")
+    private Status status;
+
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinTable(name = "product_category",
+    joinColumns = @JoinColumn(name = "product_id"),
+    inverseJoinColumns = @JoinColumn(name = "category_id"))
+    private Set<Category> categories;
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id=" + getId() +
+                ", title='" + title + '\'' +
+                ", cost=" + cost +
+                ", manufactureDate=" + manufactureDate +
+                ", manufacturer=" + manufacturer.getName() +
+                "}\n";
+    }
+
+    @Builder
+    public Product(int version, String createdBy, LocalDateTime createdDate, String lastModifiedBy,
+                   LocalDateTime lastModifiedDate, String title, BigDecimal cost, LocalDate manufactureDate,
+                   Manufacturer manufacturer, Status status, Set<Category> categories) {
+        super(version, createdBy, createdDate, lastModifiedBy, lastModifiedDate);
+        this.title = title;
+        this.cost = cost;
+        this.manufactureDate = manufactureDate;
+        this.manufacturer = manufacturer;
+        this.status = status;
+        this.categories = categories;
+    }
+}

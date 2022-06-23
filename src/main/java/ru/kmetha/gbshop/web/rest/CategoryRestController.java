@@ -6,10 +6,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-import ru.kmetha.gbshop.entity.Category;
+import ru.kmetha.gbapi.category.dto.CategoryDto;
 import ru.kmetha.gbshop.service.CategoryService;
-import ru.kmetha.gbshop.web.dto.CategoryDto;
-import ru.kmetha.gbshop.web.dto.ProductDto;
 
 import java.net.URI;
 import java.util.List;

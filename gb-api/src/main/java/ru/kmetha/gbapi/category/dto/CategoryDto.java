@@ -1,4 +1,4 @@
-package ru.kmetha.gbshop.web.dto;
+package ru.kmetha.gbapi.category.dto;
 
 import lombok.*;
 

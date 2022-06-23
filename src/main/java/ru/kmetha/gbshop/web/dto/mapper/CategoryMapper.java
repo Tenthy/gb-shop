@@ -2,7 +2,7 @@ package ru.kmetha.gbshop.web.dto.mapper;
 
 import org.mapstruct.Mapper;
 import ru.kmetha.gbshop.entity.Category;
-import ru.kmetha.gbshop.web.dto.CategoryDto;
+import ru.kmetha.gbapi.category.dto.CategoryDto;
 
 @Mapper
 public interface CategoryMapper {

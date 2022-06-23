@@ -6,9 +6,9 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import ru.kmetha.gbapi.manufacturer.dto.ManufacturerDto;
 import ru.kmetha.gbshop.dao.ManufacturerDao;
 import ru.kmetha.gbshop.entity.Manufacturer;
-import ru.kmetha.gbshop.web.dto.ManufacturerDto;
 import ru.kmetha.gbshop.web.dto.mapper.ManufacturerMapper;
 
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package ru.kmetha.gbshop.rest;
+package ru.kmetha.gbshop.web.rest;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -9,8 +9,8 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import ru.kmetha.gbapi.manufacturer.dto.ManufacturerDto;
 import ru.kmetha.gbshop.service.ManufacturerService;
-import ru.kmetha.gbshop.web.dto.ManufacturerDto;
 import ru.kmetha.gbshop.web.dto.mapper.ManufacturerMapper;
 import ru.kmetha.gbshop.web.rest.ManufacturerRestController;
 
